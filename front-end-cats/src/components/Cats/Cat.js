@@ -1,27 +1,40 @@
 
 import React, { Component } from 'react';
-import ReviewsContainer from '../../containers/ReviewsContainer';
+import Comments from '../../components/Comments/Comments';
+import { connect } from 'react-redux'
+
 
 class Cat extends Component {
 
-  handleOnClick(e){
-    this.props.deleteCat(this.props.cat.id)
-  }
+  // handleOnClick(e){
+  //   this.props.deleteCat(this.props.cat.id)
+  // }
 
   render() {
     const { cat } = this.props;
 
     return (
       <div>
-        <li>
-          {cat.name}
-          {cat.image}
-          <button onClick={(e) => this.handleOnClick(e) }> X </button>
-          <ReviewsContainer cat={cat}/>
-        </li>
+       
+          <img src={cat.image}/>
+          <p>Name: {cat.name}</p>
+          {cat.likes}
+          {/* <button onClick={(e) => this.handleOnClick(e) }> X </button> */}
+          <div>
+
+             <Comments cat_comments={cat.comments} cat_id={cat.id}  addComment={this.props.addComment} deleteComment={this.props.deleteComment}/>
+          </div>  
+        
+    
       </div>
     );
   }
 };
 
-export default Cat;
+
+const mapDispatchToProps = dispatch => ({
+  addComment: comment => dispatch({type: 'ADD_COMMENT', comment}),
+  deleteComment: id => dispatch({type: 'DELETE_COMMENT', id})
+ })
+
+export default connect(null, mapDispatchToProps)(Cat);
