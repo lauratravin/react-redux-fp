@@ -20,7 +20,7 @@ export const addCat = (data) => {
         })
       })
       .catch((error) => {
-        console.log('Error:', error)
+        console.log('Error creating cat:', error)
       })
       console.log('e')
     }

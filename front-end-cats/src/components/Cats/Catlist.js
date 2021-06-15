@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCats } from '../../actions/catActions'
+import {voteCat} from '../../actions/voteCat'
 import Cats from './Cats'
 
 class Catlist extends Component {   
@@ -15,7 +16,7 @@ class Catlist extends Component {
       if(this.props.loading) {
         return <div>Loading...</div>
       } else {        
-        return <Cats catsList={this.props.catsList} />
+        return <Cats catsList={this.props.catsList}  voteCat={this.props.voteCat}/>
       }
     }
   
@@ -40,7 +41,8 @@ class Catlist extends Component {
 
   const mapDispatchToProps = dispatch => {
     return {
-      fetchCats: () => dispatch(fetchCats())
+      fetchCats: () => dispatch(fetchCats()),
+      voteCat: (cat) => dispatch(voteCat(cat))
     }
   }
 

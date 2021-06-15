@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Cat from './Cat'
 
 class Cats extends Component {
-  debbuger
+
   render() {
-    const { catsList } = this.props; //destructuring  
-    
+    const { catsList }   = this.props; //destructuring  
+    // console.log(catsList)
     const catsAll= catsList.map( cat => {
          return(
-             <Cat cat={cat} key={cat.id}/>
+             <Cat cat={cat} key={cat.id} voteCat={this.props.voteCat}/>
          )
         }  
     )

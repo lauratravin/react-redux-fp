@@ -1,11 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { addCat } from '../../actions/addCat'
-
-
-
 
 class CatInput extends Component {
 
@@ -16,7 +12,6 @@ class CatInput extends Component {
       image: ''
     }
   }
-
 
   handleChange(e){
    this.setState({ 

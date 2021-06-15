@@ -24,6 +24,14 @@ class CatsController < ApplicationController
         
          
         @cat.save
-        
+        render json: @cat
+    end
+
+    def update
+    
+        @cat = Cat.find(params[:id])
+        @cat.likes = @cat.likes.to_i + 1
+        @cat.save
+        render json: @cat
     end
 end

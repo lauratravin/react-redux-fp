@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addComment } from '../../actions/addComment'
 
-class ReviewInput extends Component {
+class CommentInput extends Component {
 
   state = {
-    text: ''
+    text: '',
+    catId: 0
   }
 
   handleOnChange = event => {
     this.setState({
       text: event.target.value,
+      catId: this.props.catId
     });
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addComment({text: this.state.text, catId: this.props.CatId });
+    this.props.addComment(this.state);
     this.setState({
       text: '',
     });
@@ -24,7 +28,7 @@ class ReviewInput extends Component {
     return (
       <div>
         <form onSubmit={this.handleOnSubmit} >
-          <label>Comments</label>
+          <label>Comment</label>
           <input
             type="text"
             value={this.state.text}
@@ -36,4 +40,10 @@ class ReviewInput extends Component {
   }
 };
 
-export default ReviewInput;
+const mapDispatchToProps = dispatch => {
+  return {
+    addComment: (d) => dispatch(addComment(d))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CommentInput)
