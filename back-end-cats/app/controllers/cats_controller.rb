@@ -2,10 +2,14 @@ class CatsController < ApplicationController
 
 
     def index
-        cats = Cat.all
-        # options = {
-        #    include: [:seats]
-        #  }
+        if (params[:order] == "true")
+            cats = Cat.order(likes: :desc)
+        else 
+            cats = Cat.all
+            # options = {
+            #    include: [:seats]
+            #  }
+        end
         render json: cats, only: [:id, :name, :image, :likes], include: [:comments]
         # render json: FlightSerializer.new(fligths,options) 
         #NOTE: the serializer in this class that has relationship doesnt work as written in Flatiron course. I use serializer

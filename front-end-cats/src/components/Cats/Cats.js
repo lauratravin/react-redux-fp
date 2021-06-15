@@ -8,7 +8,7 @@ class Cats extends Component {
     // console.log(catsList)
     const catsAll= catsList.map( cat => {
          return(
-             <Cat cat={cat} key={cat.id} voteCat={this.props.voteCat}/>
+             <Cat cat={cat} key={cat.id} voteCat={this.props.voteCat} fav={this.props.fav}/>
          )
         }  
     )

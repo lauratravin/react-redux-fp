@@ -37,8 +37,12 @@ class CommentsController < ApplicationController
     
         response = [@cat.id, params[:id]]
        
-            format.json  { render :json => response }
-          
+        # format.json  { render :json => response }
+        #  respond_to? do |format|
+        #     format.json  { render :json => response }
+        #  end  
+
+         render :json => response
 
     end
 

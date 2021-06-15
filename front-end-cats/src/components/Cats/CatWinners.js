@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCats } from '../../actions/catsFetch'
-import {voteCat} from '../../actions/voteCat'
 import Cats from './Cats'
 
-class Catlist extends Component {   
+class CatWinners extends Component {   
 
   constructor(props) {
     super(props);
-    this.order = false;
+    this.order = true;
   }
- 
 
+  
     componentDidMount() {
       //  console.log(this.props)
       this.props.fetchCats(this.order)
@@ -22,11 +21,12 @@ class Catlist extends Component {
       if(this.props.loading) {
         return <div>Loading...</div>
       } else {        
-        return <Cats catsList={this.props.catsList}  voteCat={this.props.voteCat}/>
+        return <Cats catsList={this.props.catsList} fav="true"/>
       }
     }
   
     render() {
+      const order = true
     // console.log("render state in catlist",this.props)
       return (
         <div>
@@ -48,9 +48,8 @@ class Catlist extends Component {
   const mapDispatchToProps = dispatch => {
     return {
       fetchCats: (order) => dispatch(fetchCats(order)),
-      voteCat: (cat) => dispatch(voteCat(cat))
     }
   }
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Catlist)
+  export default connect(mapStateToProps, mapDispatchToProps)(CatWinners)
   
