@@ -31,19 +31,20 @@ class CatInput extends Component {
   render() {
     return (
       <div class="newCatForm">
-          <form onSubmit={(e)=> this.handleOnSubmit(e) }>
-              <label>Name</label>
+          <form onSubmit={(e)=> this.handleOnSubmit(e) } >
+              <label>CAT NAME</label><br/>
               <input  type="text" 
+                      
                       id= "name"
                       value={this.state.name}  
-                      onChange={(e => this.handleChange(e))}/>
+                      onChange={(e => this.handleChange(e))}/><br/>
             
-              <label>Image </label>
+              <label>IMAGE (url) </label><br/>
               <input  type="text" 
                       id= "image"
                       value={this.state.image}  
-                      onChange={(e => this.handleChange(e))}/>
-              <input type="Submit" />
+                      onChange={(e => this.handleChange(e))}/><br/>
+              <input type="Submit" value="Add" />
           </form>
       </div>
     );

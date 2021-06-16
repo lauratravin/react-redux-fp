@@ -61,9 +61,12 @@ header h1{
 
 nav{
   height:80px;
-  /* width: 1600px; */
+  width: 1600px;
   margin: auto;
   margin-top: 10px;
+  /* border: 3px solid #E1306C; */
+  text-align: center;
+
 }
 
 nav div{
@@ -100,6 +103,7 @@ nav div:hover {
   width: 35%;
   display: inline-block;
   margin-bottom: 30px;
+  text-align: center;
 }
  .bloque2{
    vertical-align: top;
@@ -116,12 +120,12 @@ nav div:hover {
   width: 400px;
 }
 
-.renderCat p{
+.rankingGrid .renderCat p{
   color: #833AB4;
   font-weight: bold;
   background: #FCAF45;
   padding: 10px 10px;
-  width: 380px;
+  /* width: 380px; */
   text-align: center;
   
 }
@@ -134,7 +138,7 @@ nav div:hover {
   width: 100px;
   border-radius: 30px;
   border: 2px solid #833AB4;
-  margin-left: 20%;
+ 
 }
 .newCat{
    padding: 30px 30px 30px 0px;
@@ -207,9 +211,30 @@ nav div:hover {
   color: #833AB4;
 }
 
-.newcatForm{
+.newCatForm{
   width: 1400px;
   margin: auto;
   background: #FCAF45;
+  height: 400px;
 }
 
+.newCatForm form{
+  padding: 100px;
+}
+
+.newCatForm form label{
+  color: #833AB4;
+  font-weight: bold;
+  font-size: 25px;
+}
+.newCatForm form input{
+  margin-bottom: 20px;
+  width: 300px;
+}
+.newCatForm form input[type=submit]{
+  background: #833AB4;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 25px;
+
+}

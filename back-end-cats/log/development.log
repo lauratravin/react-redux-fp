@@ -9044,3 +9044,19 @@ Processing by CatsController#index as */*
 Completed 200 OK in 27ms (Views: 20.5ms | ActiveRecord: 4.5ms | Allocations: 3340)
 
 
+Started GET "/cats?order=false" for 127.0.0.1 at 2021-06-15 20:46:43 -0400
+Processing by CatsController#index as */*
+  Parameters: {"order"=>"false"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/cats_controller.rb:13:in `index'
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:13:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 1]]
+  ↳ app/controllers/cats_controller.rb:13:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 10]]
+  ↳ app/controllers/cats_controller.rb:13:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 11]]
+  ↳ app/controllers/cats_controller.rb:13:in `index'
+Completed 200 OK in 78ms (Views: 70.5ms | ActiveRecord: 4.5ms | Allocations: 3888)
+
+
