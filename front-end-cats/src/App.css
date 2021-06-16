@@ -230,6 +230,8 @@ nav div:hover {
 .newCatForm form input{
   margin-bottom: 20px;
   width: 300px;
+  font-size: 25px;
+
 }
 .newCatForm form input[type=submit]{
   background: #833AB4;

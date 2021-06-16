@@ -28,7 +28,7 @@ class CatsController < ApplicationController
         
          
         @cat.save
-        render json: @cat
+        render json: @cat, include: [:comments]
     end
 
     def update

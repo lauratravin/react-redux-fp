@@ -14,6 +14,7 @@ import CatInput from './components/Cats/CatInput';
 import FavContainer from './containers/FavContainer'
 
 import Header from './containers/Header';
+import Footer from './containers/Footer';
 import './App.css';
 
 
@@ -33,7 +34,7 @@ function App() {
               <Route exact path="/catscontainer" component={CatsContainer} />
               <Route exact path="/newcat" component={CatInput} />
               <Route exact path="/favcontainer" component={FavContainer} />
-
+              <Footer/>
 
            </div>
     </Router>

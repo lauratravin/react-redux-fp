@@ -26,6 +26,7 @@ handleOnClick = () => {
     }
     else {
       return (
+    
         <div class="renderCat">
              <div class="bloque1">
                   <img src={cat.image}/>
@@ -37,6 +38,7 @@ handleOnClick = () => {
            
             <div class="bloque2">
                  <div>
+                
                    <Comments cat_comments={cat.comments} cat_id={cat.id}  addComment={this.props.addComment} deleteComment={this.props.deleteComment}/>
                 </div>
             </div>
