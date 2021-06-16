@@ -3,8 +3,8 @@ import CatWinners from '../components/Cats/CatWinners'
 
 const FavContainer = () => {
   return (
-    <div>
-      <h1>Winners Cats</h1>
+    <div class="ranking">
+      <h1>CATS RANKING</h1>
       <CatWinners/>
     </div>
   );

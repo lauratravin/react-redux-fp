@@ -14,11 +14,10 @@ class Comment extends Component {
     const { comment } = this.props;
 
     return (
-      <div>
-        <li>
-          {comment.comment}
-        </li>
-        <button onClick={this.handleOnClick}> Delete </button>
+      <div class="commentList">
+        
+           <p> {comment.comment} </p>  <button onClick={this.handleOnClick}> x </button>
+        
       </div>
     );
   }

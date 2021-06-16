@@ -30,7 +30,7 @@ class CatInput extends Component {
 
   render() {
     return (
-      <div>
+      <div class="newCatForm">
           <form onSubmit={(e)=> this.handleOnSubmit(e) }>
               <label>Name</label>
               <input  type="text" 

@@ -15,23 +15,32 @@ handleOnClick = () => {
     const { cat } = this.props;
     if(this.props.fav == "true") {
       return (
-        <div>
+        <div class="catRanking">
+          
             <img src={cat.image}/>
-            <p>Name: {cat.name}</p>
-            <p>Votes: {cat.likes} </p>
-        </div>
+            <p><span>NAME: {cat.name}</span></p>
+            <p>VOTES: {cat.likes} </p>
+        
+      </div>  
       );
     }
     else {
       return (
-        <div>
-            <img src={cat.image}/>
-            <p>Name: {cat.name}</p>
-           
-            <button onClick={(e) => this.handleOnClick() }>Vote: {cat.likes} </button> 
-            <div>
-               <Comments cat_comments={cat.comments} cat_id={cat.id}  addComment={this.props.addComment} deleteComment={this.props.deleteComment}/>
+        <div class="renderCat">
+             <div class="bloque1">
+                  <img src={cat.image}/>
+                  <p>NAME: {cat.name}</p>
+                  <p>CURRENT VOTES: {cat.likes}</p>
+                
+                  <button onClick={(e) => this.handleOnClick() }>Vote! </button> 
             </div>
+           
+            <div class="bloque2">
+                 <div>
+                   <Comments cat_comments={cat.comments} cat_id={cat.id}  addComment={this.props.addComment} deleteComment={this.props.deleteComment}/>
+                </div>
+            </div>
+           
         </div>
       );
     }

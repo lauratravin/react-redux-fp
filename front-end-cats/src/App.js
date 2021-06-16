@@ -14,6 +14,8 @@ import CatInput from './components/Cats/CatInput';
 import FavContainer from './containers/FavContainer'
 
 import Header from './containers/Header';
+import './App.css';
+
 
 
 

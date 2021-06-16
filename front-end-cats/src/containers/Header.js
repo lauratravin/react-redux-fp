@@ -2,8 +2,10 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header >
-      <h1>logo</h1>
+    <header>
+      <img  src="./logo.jpeg"/>
+      <div>
+      <h1>Catsgram</h1></div>
     </header>
   );
 };

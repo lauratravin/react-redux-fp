@@ -18,8 +18,11 @@ class Comments extends Component {
     
     return (
       <div>
-           {commentAll}
+          
+           <div>{commentAll}</div>
+           <div class="newCat">
            <CommentInput catId={catId} addComment={addComment}/>
+           </div>
       </div>
     );
   }

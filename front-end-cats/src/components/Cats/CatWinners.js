@@ -29,8 +29,7 @@ class CatWinners extends Component {
       const order = true
     // console.log("render state in catlist",this.props)
       return (
-        <div>
-         
+        <div>       
           {this.handleLoading()}
         </div>
       );

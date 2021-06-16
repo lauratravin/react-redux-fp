@@ -27,13 +27,16 @@ class CommentInput extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleOnSubmit} >
-          <label>Comment</label>
-          <input
-            type="text"
+        <form onSubmit={this.handleOnSubmit} class="addCat" >
+          <label>ADD NEW COMMENT</label><br/>
+          <textarea
+            rows="3" cols="85"
+            maxLength= "150"
+            placeholder="limit 150 characters..."
+            type="textarea"
             value={this.state.text}
-            onChange={this.handleOnChange} />
-          <input type="submit" />
+            onChange={this.handleOnChange} /><br/>
+          <input type="submit" value="ADD"  />
         </form>
       </div>
     );
