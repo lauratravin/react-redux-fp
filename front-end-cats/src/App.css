@@ -216,6 +216,7 @@ nav div:hover {
   margin: auto;
   background: #FCAF45;
   height: 400px;
+  margin-bottom: 150px;
 }
 
 .newCatForm form{
@@ -239,4 +240,21 @@ nav div:hover {
   font-weight: bold;
   font-size: 25px;
 
+}
+
+footer{
+  background-color: #E6E6E6;
+  height: 200px;
+  text-align: center;
+}
+footer div{
+  padding-top: 30px;
+}
+footer p{
+  color: #833AB4;
+  font-weight: bold;
+  font-size: 25px;
+}
+footer span{
+  font-size: 11px;
 }

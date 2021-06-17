@@ -4,7 +4,8 @@ const Footer = () => {
   return (
     <footer>
       <div>
-       Copyright Catsgram
+         <p>Copyright Catsgram.</p> 
+         <p><span>Logo by Jiyeon Kim</span></p>
       </div>
     </footer>
   );
