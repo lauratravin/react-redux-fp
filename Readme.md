@@ -4,28 +4,28 @@ This application is no commercial, funny variation of instagram but for cats whe
 https://github.com/lauratravin/react-redux-fp/
 
 
-General Information
+#General Information
 * Post and vote for cats
 * Comment or delete comments in each cat.
 
 
-Technologies Used
+#Technologies Used
 Ruby on Rails React Redux
 
-Setup
+#Setup
 All depencies are listed in package.json file. Run npm install to install all dependencies
 
-Usage
-	•	Clone this backend repository to your machine https://github.com/lauratravin/react-redux-fp/
-	•	Run bundle to install all gems listed in the gemfile in the back end folder
-	•	Run rails db:create && db:migrate to create and migrate the database (If you are on a windows machine, you will need to make sure your  server is running. 
-	•	Run rails s to run the server
-	•	On Your front-end folder run npm install && npm start to install all dependecies listed in the package.json file and start the server and run the application in the browser.
+#Usage
+	*	Clone this backend repository to your machine https://github.com/lauratravin/react-redux-fp/
+	*	Run bundle to install all gems listed in the gemfile in the back end folder
+	*	Run rails db:create && db:migrate to create and migrate the database (If you are on a windows machine, you will need to make sure your  server is running. 
+	*	Run rails s to run the server
+	*	On Your front-end folder run npm install && npm start to install all dependecies listed in the package.json file and start the server and run the application in the browser.
 
-Project Status
+#Project Status
 Project is: in progress . I intend to add more features to this application as I learn new skills.
 
-Acknowledgements
+#Acknowledgements
 Give credit here.
-	•	This project was inspired by my cats
+	*	This project was inspired by my cats
 
