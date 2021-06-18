@@ -1,11 +1,13 @@
 Catsgram
+
 This application is no commercial, funny variation of instagram but for cats where you can upload your cat photo and vote your favorites cats. 
 https://github.com/lauratravin/react-redux-fp/
 
 
 General Information
-	•	Post and vote for cats
-	•	Comment or delete comments in each cat.
+* Post and vote for cats
+* Comment or delete comments in each cat.
+
 
 Technologies Used
 Ruby on Rails React Redux
