@@ -10259,3 +10259,131 @@ Processing by CatsController#index as */*
 Completed 200 OK in 75ms (Views: 56.4ms | ActiveRecord: 8.8ms | Allocations: 4126)
 
 
+Started GET "/cats?order=false" for 127.0.0.1 at 2021-06-18 18:16:38 -0400
+Processing by CatsController#index as */*
+  Parameters: {"order"=>"false"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 1]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 10]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 11]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 12]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+Completed 200 OK in 562ms (Views: 512.7ms | ActiveRecord: 8.7ms | Allocations: 11229)
+
+
+Started GET "/cats?order=false" for 127.0.0.1 at 2021-06-19 11:39:13 -0400
+Processing by CatsController#index as */*
+  Parameters: {"order"=>"false"}
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 1]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 10]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 11]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 12]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+Completed 200 OK in 1378ms (Views: 1301.4ms | ActiveRecord: 16.6ms | Allocations: 4680)
+
+
+Started POST "/comments" for 127.0.0.1 at 2021-06-19 11:39:49 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"Crazy kitten", "catId"=>12, "comment"=>{}}
+  [1m[36mCat Load (0.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:18:in `create'
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("cat_id", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cat_id", 12], ["comment", "Crazy kitten"], ["created_at", "2021-06-19 15:39:49.398577"], ["updated_at", "2021-06-19 15:39:49.398577"]]
+  ↳ app/controllers/comments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:18:in `create'
+Completed 200 OK in 74ms (Views: 1.9ms | ActiveRecord: 2.3ms | Allocations: 2275)
+
+
+Started POST "/comments" for 127.0.0.1 at 2021-06-19 11:39:53 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"jjj", "catId"=>12, "comment"=>{}}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:18:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("cat_id", "comment", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cat_id", 12], ["comment", "jjj"], ["created_at", "2021-06-19 15:39:53.805998"], ["updated_at", "2021-06-19 15:39:53.805998"]]
+  ↳ app/controllers/comments_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:18:in `create'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.2ms | Allocations: 2068)
+
+
+Started DELETE "/comments/128" for 127.0.0.1 at 2021-06-19 11:39:55 -0400
+Processing by CommentsController#destroy as */*
+  Parameters: {"id"=>"128"}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 128], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:25:in `destroy'
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:26:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:28:in `destroy'
+  [1m[36mComment Destroy (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 128]]
+  ↳ app/controllers/comments_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:28:in `destroy'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 2628)
+
+
+Started GET "/cats?order=true" for 127.0.0.1 at 2021-06-19 11:40:22 -0400
+Processing by CatsController#index as */*
+  Parameters: {"order"=>"true"}
+  [1m[36mCat Load (1.0ms)[0m  [1m[34mSELECT "cats".* FROM "cats" ORDER BY "cats"."likes" DESC[0m
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 12]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 11]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 1]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 10]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+Completed 200 OK in 40ms (Views: 31.7ms | ActiveRecord: 2.2ms | Allocations: 4240)
+
+
+Started POST "/cats" for 127.0.0.1 at 2021-06-19 11:40:53 -0400
+Processing by CatsController#create as JSON
+  Parameters: {"name"=>"Snow", "image"=>"http://catsitterdiary.com/learnco/react/cats/5.jpg", "cat"=>{"name"=>"Snow", "image"=>"http://catsitterdiary.com/learnco/react/cats/5.jpg"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:25:in `create'
+  [1m[36mCat Create (1.3ms)[0m  [1m[32mINSERT INTO "cats" ("name", "image", "likes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snow"], ["image", "http://catsitterdiary.com/learnco/react/cats/5.jpg"], ["likes", 0], ["created_at", "2021-06-19 15:40:53.011868"], ["updated_at", "2021-06-19 15:40:53.011868"]]
+  ↳ app/controllers/cats_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:25:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 13]]
+  ↳ app/controllers/cats_controller.rb:27:in `create'
+Completed 200 OK in 22ms (Views: 3.9ms | ActiveRecord: 2.1ms | Allocations: 2464)
+
+
+Started GET "/cats?order=false" for 127.0.0.1 at 2021-06-19 11:40:55 -0400
+Processing by CatsController#index as */*
+  Parameters: {"order"=>"false"}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 1]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 10]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 11]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 12]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."cat_id" = ?[0m  [["cat_id", 13]]
+  ↳ app/controllers/cats_controller.rb:12:in `index'
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.7ms | Allocations: 4979)
+
+

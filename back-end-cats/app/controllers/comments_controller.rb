@@ -2,16 +2,8 @@ class CommentsController < ApplicationController
 
     def index
         comments = Comment.all
-        # options = {
-        #    include: [:seats]
-        #  }
         render json: comments
-        # render json: FlightSerializer.new(fligths,options) 
-        #NOTE: the serializer in this class that has relationship doesnt work as written in Flatiron course. I use serializer
-        #for Passenger. Here it returns an ugly json. I asked help in Ask Question about it and nobody could help me. 
-        
-
-     end
+    end
 
 
     def create
@@ -24,6 +16,7 @@ class CommentsController < ApplicationController
         
         @comment.cat = @cat
         @comment.save
+
         render json: @comment
     end 
 
@@ -36,13 +29,8 @@ class CommentsController < ApplicationController
       
     
         response = [@cat.id, params[:id]]
-       
-        # format.json  { render :json => response }
-        #  respond_to? do |format|
-        #     format.json  { render :json => response }
-        #  end  
-
-         render :json => response
+    
+        render :json => response
 
     end
 

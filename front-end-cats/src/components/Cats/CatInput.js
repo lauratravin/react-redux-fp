@@ -47,6 +47,7 @@ class CatInput extends Component {
               <input type="Submit" value="Add" />
           </form>
       </div>
+      
     );
   }
 };
